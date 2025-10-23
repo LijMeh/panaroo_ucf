@@ -385,32 +385,37 @@ def main():
         print("collapse mistranslations...")
 
     # clean up translation errors
-    G = collapse_families(G,
-                          seqid_to_centroid=seqid_to_centroid,
-                          outdir=temp_dir,
-                          dna_error_threshold=0.98,
-                          correct_mistranslations=True,
-                          family_len_dif_percent=args.family_len_dif_percent,
-                          length_outlier_support_proportion=args.
-                          length_outlier_support_proportion,
-                          n_cpu=args.n_cpu,
-                          quiet=(not args.verbose))[0]
+    # remove collapse families to enable exact 100% AA groups
+#    G = collapse_families(G,
+#                         seqid_to_centroid=seqid_to_centroid,
+#                          outdir=temp_dir,
+#                          dna_error_threshold=0.98,
+#                          correct_mistranslations=True,
+#                          family_len_dif_percent=args.family_len_dif_percent,
+#                          length_outlier_support_proportion=args.
+#                          length_outlier_support_proportion,
+#                          n_cpu=args.n_cpu,
+#                          quiet=(not args.verbose))[0]
 
     if args.verbose:
-        print("collapse gene families...")
+        print("NOT collapse gene families, skipping step...")
 
     # collapse gene families
-    G, distances_bwtn_centroids, centroid_to_index = collapse_families(
-        G,
-        seqid_to_centroid=seqid_to_centroid,
-        outdir=temp_dir,
-        family_threshold=args.family_threshold,
-        correct_mistranslations=False,
-        family_len_dif_percent=args.family_len_dif_percent,
-        length_outlier_support_proportion=args.
-        length_outlier_support_proportion,
-        n_cpu=args.n_cpu,
-        quiet=(not args.verbose))
+#    G, distances_bwtn_centroids, centroid_to_index = collapse_families(
+#        G,
+#        seqid_to_centroid=seqid_to_centroid,
+#        outdir=temp_dir,
+#        family_threshold=args.family_threshold,
+#        correct_mistranslations=False,
+#        family_len_dif_percent=args.family_len_dif_percent,
+#        length_outlier_support_proportion=args.
+#        length_outlier_support_proportion,
+#        n_cpu=args.n_cpu,
+#        quiet=(not args.verbose))
+
+    # provide defaults because the collapse_families call above was commented out
+    distances_bwtn_centroids = None
+    centroid_to_index = None
 
     if args.verbose:
         print("trimming contig ends...")

@@ -2,11 +2,21 @@
 
 [![Build Status](https://github.com/gtonkinhill/panaroo/workflows/panaroo-CI/badge.svg)](https://github.com/gtonkinhill/panaroo/actions)
 
-An updated pipeline for pangenome investigation
+An updated update to the pipeline for pangenome investigation. This branch ONLY works for finding EXACT protein variants, and should ONLY be run with parameters as follows: 
 
-<p align="center">
-<img src="https://github.com/gtonkinhill/panaroo/blob/master/panaroo.png" alt="alt text" width="500">
-</p>
+```{bash}
+
+panaroo -i <your_gff_files> -o <out_dir>
+--clean-mode strict
+--threshold 1.0
+--family_threshold 1.0
+--len_dif_percent 1.0
+--family_len_dif_percent 1.0
+--refind-mode off
+--merge_paralogs True (optional, but how I use it)
+-t <threads>
+
+```
 
 ## Documentation
 

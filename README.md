@@ -14,10 +14,29 @@ panaroo -i <your_gff_files> -o <out_dir>
 --family_len_dif_percent 1.0
 --refind-mode off
 --merge_paralogs True (optional, but how I use it)
+--remove_invalid genes
 -t <threads>
 
 ```
 
+## Installation
+```{bash}
+
+git clone https://github.com/LijMeh/panaroo_ucf.git
+
+cd panaroo_ucf
+
+pip install -e .
+
+```
+
+Additional dependencies can be installed from the environment panaroo_for_git.yml
+
+```{bash}
+
+mamba env create -f panaroo_for_git.yml
+
+```
 ## Documentation
 
 Documentation for Panaroo can be found [here](https://gtonkinhill.github.io/panaroo)

@@ -13,8 +13,8 @@ panaroo -i <your_gff_files> -o <out_dir>
 --len_dif_percent 1.0
 --family_len_dif_percent 1.0
 --refind-mode off
---merge_paralogs True (optional, but how I use it)
---remove_invalid genes
+--merge_paralogs (optional, but how I use it)
+--remove-invalid-genes
 -t <threads>
 
 ```

@@ -382,7 +382,7 @@ def main():
                  stringizer=custom_stringizer)
 
     if args.verbose:
-        print("collapse mistranslations...")
+        print("NOT collapsing mistranslations, skipping step...")
 
     # clean up translation errors
     # remove collapse families to enable exact 100% AA groups
@@ -398,7 +398,7 @@ def main():
 #                          quiet=(not args.verbose))[0]
 
     if args.verbose:
-        print("NOT collapse gene families, skipping step...")
+        print("NOT collapsing gene families, skipping step...")
 
     # collapse gene families
 #    G, distances_bwtn_centroids, centroid_to_index = collapse_families(
@@ -490,7 +490,7 @@ def main():
         mems_to_isolates[i] = iso
 
     if args.verbose:
-        print("writing output...")
+        print("writing output  [REMEMBER  YOU HAVE RUN AT 100% and SKIPPED 2 Steps]...")
 
     # write out roary like gene_presence_absence.csv
     # get original annotaiton IDs, lengts and whether or

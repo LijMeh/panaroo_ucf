@@ -301,18 +301,18 @@ def merge_graphs(directories,
     if not quiet:
         print("Number of nodes in merged graph: ", G.number_of_nodes())
 
-    if not quiet: print("Collapsing at DNA...")
-    G = collapse_families(
-        G,
-        seqid_to_centroid=seqid_to_centroid,
-        outdir=temp_dir,
-        dna_error_threshold=0.98,
-        correct_mistranslations=True,
-        length_outlier_support_proportion=length_outlier_support_proportion,
-        n_cpu=n_cpu,
-        quiet=quiet,
-        depths=depths,
-        search_genome_ids=search_genome_ids)[0]
+    if not quiet: print("NOT collapsing at DNA, skipping...")
+    #G = collapse_families(
+    #    G,
+    #    seqid_to_centroid=seqid_to_centroid,
+    #    outdir=temp_dir,
+    #    dna_error_threshold=0.98,
+    #    correct_mistranslations=True,
+    #    length_outlier_support_proportion=length_outlier_support_proportion,
+    #    n_cpu=n_cpu,
+    #    quiet=quiet,
+    #    depths=depths,
+    #    search_genome_ids=search_genome_ids)[0]
 
     if not quiet:
         print("Number of nodes in merged graph: ", G.number_of_nodes())

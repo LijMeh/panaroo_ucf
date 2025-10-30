@@ -491,6 +491,12 @@ def get_options():
                           default=0.95,
                           type=float)
 
+    matching.add_argument("--family_len_dif_percent",
+                          dest="family_len_dif_percent",
+                          help="length difference cut-off (default=0 for UNKNOWN REASONS)",
+                          default=0,
+                          type=float)
+
     matching.add_argument("--merge_paralogs",
                           dest="merge_paralogs",
                           help="don't split paralogs",
